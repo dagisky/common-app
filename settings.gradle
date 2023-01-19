@@ -1,0 +1,6 @@
+rootProject.name = 'common-app'
+include 'common-security'
+include 'common-security:common-messaging'
+findProject(':common-security:common-messaging')?.name = 'common-messaging'
+include 'common-messaging'
+
