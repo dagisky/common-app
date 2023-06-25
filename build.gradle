@@ -1,5 +1,12 @@
+buildscript {
+    ext {
+        spring_boot_version = '3.1.1'
+        junit_bom_version = '5.8.1'
+    }
+}
 plugins {
     id 'java'
+    id "org.sonarqube" version "4.2.1.3168"
 }
 
 group 'org.example'
@@ -16,4 +23,12 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "dagisky_common-app"
+        property "sonar.organization", "dagisky"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
